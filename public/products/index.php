@@ -1,7 +1,7 @@
 <?php
 
-$pdo = new PDO('mysql:host=localhost; port=3306; dbname=products', 'root', 'Zakizakizaki21%');
-$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+/** @var \PDO */
+require_once '../../database.php';
 
 $search = $_GET['search'] ?? '';
 if ($search) {
@@ -16,23 +16,9 @@ $procdata = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="style.css" />
 
-    <title>Product Crud</title>
-  </head>
-  <body>
+<?php include_once "../../views/partials/header.php";?>
+
     <h1>Product Crud</h1>
     <p>
       <a href="create.php" class="btn btn-success">Create Product</a>
