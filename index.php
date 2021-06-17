@@ -30,6 +30,20 @@ $procdata = $statement->fetchAll(PDO::FETCH_ASSOC);
     <p>
       <a href="create.php" class="btn btn-success">Create Product</a>
     </p>
+    <form action="" method="get">
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Search Product"
+        name="search"
+        value="<?php echo $search; ?>"
+      />
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary" type="submit">Search</button>
+      </div>
+    </div>
+    </form>
     <table class="table">
       <thead>
         <tr>
